@@ -1,3 +1,4 @@
+export { BinaryMessageType } from "./agnostic/protocol_agnostic.js";
 export { Utf8DataFrame } from "./node/Protocol/Basic/Utf8DataFrame.js";
 export { BinaryDataFrame } from "./node/Protocol/Basic/BinaryDataFrame.js";
 export { ACKFrame } from "./node/Protocol/Basic/ACKFrame.js";

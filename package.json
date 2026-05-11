@@ -10,9 +10,9 @@
   "exports": {
     ".": {
       "types": "./dist/node/index.node.d.ts",
-      "browser": "./dist/index.web.js",
-      "node": "./dist/index.node.js",
-      "default": "./dist/index.node.js"
+      "browser": "./dist/web/index.web.js",
+      "node": "./dist/node/index.node.js",
+      "default": "./dist/node/index.node.js"
     }
   },
   "types": "./dist/node/index.node.d.ts",
