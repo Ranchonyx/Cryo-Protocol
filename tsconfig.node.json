@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist/node",
+    "target": "es2022",
+    "lib": [
+      "ES2022"
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "./src/index.node.ts",
+    "./src/node/**/*.ts",
+    "./src/agnostic/protocol_agnostic.ts"
+  ]
+}

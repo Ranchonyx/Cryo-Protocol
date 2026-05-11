@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist/web",
+    "target": "es2022",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ]
+  },
+  "include": [
+    "./src/index.web.ts",
+    "./src/web/**/*.ts",
+    "./src/agnostic/protocol_agnostic.ts"
+  ]
+}

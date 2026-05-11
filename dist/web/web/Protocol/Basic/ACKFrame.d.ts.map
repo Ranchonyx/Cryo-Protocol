@@ -1,0 +1,1 @@
+{"version":3,"file":"ACKFrame.d.ts","sourceRoot":"","sources":["../../../../../src/web/Protocol/Basic/ACKFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,UAAU,EAAC,MAAM,kBAAkB,CAAC;AAC5C,OAAO,EAAC,UAAU,EAA2C,IAAI,EAAC,MAAM,wCAAwC,CAAC;AAGjH,qBAAa,QAAQ;WACH,WAAW,CAAC,KAAK,EAAE,UAAU,GAAG,UAAU;WAe1C,SAAS,CAAC,GAAG,EAAE,IAAI,EAAE,GAAG,EAAE,MAAM,GAAG,UAAU;CAU9D"}

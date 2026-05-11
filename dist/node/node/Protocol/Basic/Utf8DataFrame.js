@@ -1,0 +1,31 @@
+import { BinaryMessageType, CRYO_MAX_PAYLOAD, DeserializationError, SerializationError } from "../../../agnostic/protocol_agnostic.js";
+import { BufferUtil } from "../../BufferUtil.js";
+export class Utf8DataFrame {
+    static Deserialize(value) {
+        const sid = BufferUtil.sidFromBuffer(value);
+        const type = value.readUint8(16);
+        const ack = value.readUInt32BE(17);
+        const payload = value.subarray(21).toString("utf8");
+        if (type !== BinaryMessageType.UTF8DATA)
+            throw new DeserializationError("Attempt to deserialize a non-data utf8 message!");
+        return {
+            sid,
+            ack,
+            type,
+            payload
+        };
+    }
+    static Serialize(sid, ack, payload) {
+        const payload_length = payload ? Buffer.from(payload).byteLength : 4;
+        if (payload_length > CRYO_MAX_PAYLOAD)
+            throw new SerializationError(`Payload size of ${CRYO_MAX_PAYLOAD} bytes exceeded!`);
+        const msg_buf = Buffer.alloc(16 + 4 + 1 + payload_length);
+        const sid_buf = BufferUtil.sidToBuffer(sid);
+        sid_buf.copy(msg_buf, 0);
+        msg_buf.writeUint8(BinaryMessageType.UTF8DATA, 16);
+        msg_buf.writeUInt32BE(ack, 17);
+        msg_buf.write(payload || "null", 21);
+        return msg_buf;
+    }
+}
+//# sourceMappingURL=Utf8DataFrame.js.map

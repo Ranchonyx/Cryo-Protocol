@@ -1,0 +1,26 @@
+import { CryoBuffer } from "../CryoBuffer.js";
+import { BinaryMessageType, DeserializationError } from "../../../agnostic/protocol_agnostic.js";
+import { BufferUtil } from "../../BufferUtil.js";
+export class ACKFrame {
+    static Deserialize(value) {
+        const sid = BufferUtil.sidFromBuffer(value);
+        const type = value.readUint8(16);
+        const ack = value.readUint32BE(17);
+        if (type !== BinaryMessageType.ACK)
+            throw new DeserializationError("Attempt to deserialize a non-ack frame!");
+        return {
+            sid,
+            ack,
+            type
+        };
+    }
+    static Serialize(sid, ack) {
+        const msg_buf = CryoBuffer.alloc(16 + 4 + 1);
+        const sid_buf = BufferUtil.sidToBuffer(sid);
+        sid_buf.copy(msg_buf, 0);
+        msg_buf.writeUint8(BinaryMessageType.ACK, 16);
+        msg_buf.writeUint32BE(ack, 17);
+        return msg_buf;
+    }
+}
+//# sourceMappingURL=ACKFrame.js.map

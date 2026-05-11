@@ -1,0 +1,44 @@
+import {BufferUtil} from "../../BufferUtil.js";
+import {CryoBuffer} from "../CryoBuffer.js";
+import {TXChunkMessage} from "../../protocol.js";
+import {
+    BinaryMessageType,
+    CRYO_MAX_PAYLOAD,
+    DeserializationError,
+    SerializationError,
+    UUID
+} from "../../../agnostic/protocol_agnostic.js";
+
+export class TXChunkFrame {
+    public static Deserialize(value: CryoBuffer): TXChunkMessage {
+        const sid = BufferUtil.sidFromBuffer(value);
+        const type = value.readUint8(16);
+        const txId = value.readUint32BE(17);
+        const payload = value.subarray(21);
+
+        if (type !== BinaryMessageType.TX_CHUNK)
+            throw new DeserializationError("Attempt to deserialize a non-tx_chunk frame!");
+
+        return {
+            sid,
+            type,
+            txId,
+            payload
+        }
+    }
+
+    public static Serialize(sid: UUID, txId: number, payload: CryoBuffer): CryoBuffer {
+        if(payload.byteLength > CRYO_MAX_PAYLOAD)
+            throw new SerializationError(`Payload size of ${CRYO_MAX_PAYLOAD} bytes exceeded!`);
+
+        const msg_buf = CryoBuffer.alloc(16 + 1 + 4 + payload.byteLength);
+        const sid_buf = BufferUtil.sidToBuffer(sid);
+
+        sid_buf.copy(msg_buf, 0); //Write sid 0-16
+        msg_buf.writeUint8(BinaryMessageType.TX_CHUNK, 16);
+        msg_buf.writeUint32BE(txId, 17);
+        msg_buf.set(payload, 21);
+
+        return msg_buf;
+    }
+}
