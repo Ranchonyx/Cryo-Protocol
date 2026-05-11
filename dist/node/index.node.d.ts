@@ -8,4 +8,5 @@ export { PingPongFrame } from "./node/Protocol/Basic/PingPongFrame.js";
 export { TXStartFrame } from "./node/Protocol/Transaction/TXStartFrame.js";
 export { TXChunkFrame } from "./node/Protocol/Transaction/TXChunkFrame.js";
 export { TXFinishFrame } from "./node/Protocol/Transaction/TXFinishFrame.js";
+export { BufferUtil } from "./node/BufferUtil.js";
 //# sourceMappingURL=index.node.d.ts.map
