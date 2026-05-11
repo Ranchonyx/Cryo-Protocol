@@ -1,7 +1,8 @@
 export type {BinaryDataMessage, TXChunkMessage} from "./web/protocol.js"
 export type {
-    PingMessage, ErrorMessage, UTF8DataMessage, AckMessage, TXStartMessage, TXFinishMessage, BinaryMessage, BinaryMessageType
+    PingMessage, ErrorMessage, UTF8DataMessage, AckMessage, TXStartMessage, TXFinishMessage, BinaryMessage
 } from "./agnostic/protocol_agnostic.js"
+export {BinaryMessageType} from "./agnostic/protocol_agnostic.js"
 
 export {Utf8DataFrame} from "./web/Protocol/Basic/Utf8DataFrame.js"
 export {BinaryDataFrame} from "./web/Protocol/Basic/BinaryDataFrame.js"
