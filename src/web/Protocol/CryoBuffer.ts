@@ -9,7 +9,7 @@ export class CryoBuffer {
         return new CryoBuffer(new Uint8Array(length));
     }
 
-    public static from(input: string, encoding?: "utf8" | "hex"): CryoBuffer {
+    public static from(input: string, encoding: "utf8" | "hex" = "utf8"): CryoBuffer {
         if (encoding === "utf8")
             return new CryoBuffer(new TextEncoder().encode(input));
 
@@ -61,7 +61,7 @@ export class CryoBuffer {
         this.buffer.set(buffer.buffer, offset);
     }
 
-    public toString(encoding: "utf8" | "hex"): string {
+    public toString(encoding: "utf8" | "hex" = "utf8"): string {
         if (encoding === "utf8")
             return new TextDecoder().decode(this.buffer);
 
