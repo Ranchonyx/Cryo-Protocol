@@ -1,0 +1,1 @@
+{"version":3,"file":"Utf8DataFrame.d.ts","sourceRoot":"","sources":["../../../../../src/impl_node/Protocol/Basic/Utf8DataFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAIH,eAAe,EACf,IAAI,EACP,MAAM,wCAAwC,CAAC;AAGhD,qBAAa,aAAa;WACR,WAAW,CAAC,KAAK,EAAE,MAAM,GAAG,eAAe;WAiB3C,SAAS,CAAC,GAAG,EAAE,IAAI,EAAE,GAAG,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,GAAG,IAAI,GAAG,MAAM;CAgBlF"}

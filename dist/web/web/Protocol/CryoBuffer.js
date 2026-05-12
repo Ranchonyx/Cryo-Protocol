@@ -8,7 +8,7 @@ export class CryoBuffer {
     static alloc(length) {
         return new CryoBuffer(new Uint8Array(length));
     }
-    static from(input, encoding) {
+    static from(input, encoding = "utf8") {
         if (encoding === "utf8")
             return new CryoBuffer(new TextEncoder().encode(input));
         const data = new Uint8Array(input.length / 2);
@@ -46,7 +46,7 @@ export class CryoBuffer {
     set(buffer, offset) {
         this.buffer.set(buffer.buffer, offset);
     }
-    toString(encoding) {
+    toString(encoding = "utf8") {
         if (encoding === "utf8")
             return new TextDecoder().decode(this.buffer);
         return [...this.buffer]

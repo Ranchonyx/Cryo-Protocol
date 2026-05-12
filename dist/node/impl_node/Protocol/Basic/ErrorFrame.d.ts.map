@@ -1,0 +1,1 @@
+{"version":3,"file":"ErrorFrame.d.ts","sourceRoot":"","sources":["../../../../../src/impl_node/Protocol/Basic/ErrorFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAEH,IAAI,EACJ,YAAY,EAGf,MAAM,wCAAwC,CAAC;AAGhD,qBAAa,UAAU;WACL,WAAW,CAAC,KAAK,EAAE,MAAM,GAAG,YAAY;WAiBxC,SAAS,CAAC,GAAG,EAAE,IAAI,EAAE,GAAG,EAAE,MAAM,EAAE,OAAO,EAAE,YAAY,CAAC,SAAS,CAAC,GAAG,IAAI,GAAG,MAAM;CAgBnG"}
