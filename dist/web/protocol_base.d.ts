@@ -1,5 +1,6 @@
 export declare const CRYO_MAX_PAYLOAD: number;
 export declare const CRYO_PROTOCOL_VERSION = 1;
+export declare const CRYO_FEATURE_MASK_TRANSACTION = 1n;
 export declare const CRYO_PROTOCOL_FEATURES: bigint;
 export declare function cryoNewId(): bigint;
 export declare class DeserializationError extends Error {

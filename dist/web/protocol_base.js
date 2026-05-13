@@ -1,8 +1,8 @@
 export const CRYO_MAX_PAYLOAD = 16 * 1024 * 1024;
 export const CRYO_PROTOCOL_VERSION = 1;
-const FEATURE_MASK_TRANSACTION = 1n;
+export const CRYO_FEATURE_MASK_TRANSACTION = 1n;
 export const CRYO_PROTOCOL_FEATURES = 0n |
-    FEATURE_MASK_TRANSACTION;
+    CRYO_FEATURE_MASK_TRANSACTION;
 export function cryoNewId() {
     const bytes = new Uint8Array(8);
     crypto.getRandomValues(bytes);
