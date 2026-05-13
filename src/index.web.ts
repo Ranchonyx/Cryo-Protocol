@@ -8,12 +8,15 @@ export type {
     TXFinishMessage,
     BinaryMessage,
     EndpointInfoMessage,
-    ByeMessage,
+    ByeMessage
+} from "./protocol_base.js"
+export {
+    BinaryMessageType,
+    cryoNewId,
     CRYO_PROTOCOL_VERSION,
     CRYO_FEATURE_MASK_TRANSACTION,
     CRYO_PROTOCOL_FEATURES
 } from "./protocol_base.js"
-export {BinaryMessageType, cryoNewId} from "./protocol_base.js"
 
 export {EndpointInfoFrame} from "./web/Protocol/Basic/EndpointInfoFrame.js"
 export {ByeFrame} from "./web/Protocol/Basic/ByeFrame.js"
