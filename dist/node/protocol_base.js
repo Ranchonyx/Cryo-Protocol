@@ -11,6 +11,11 @@ export function cryoNewId() {
         value = (value << 8n) | BigInt(byte);
     return value;
 }
+export function cryoHasFeatureFlag(flag) {
+    if (flag === 0n)
+        return false;
+    return (CRYO_PROTOCOL_FEATURES & flag) === flag;
+}
 export class DeserializationError extends Error {
     constructor(pMessage) {
         super(`Frame deserialization failed: ${pMessage}`);

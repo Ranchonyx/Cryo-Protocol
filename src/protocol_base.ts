@@ -19,11 +19,11 @@ export function cryoNewId(): bigint {
     return value;
 }
 
-export function cryoHasFeatureFlag(flag: bigint): boolean {
+export function cryoHasFeatureFlag(flags: bigint, flag: bigint): boolean {
     if (flag === 0n)
         return false;
 
-    return (CRYO_PROTOCOL_FEATURES & flag) === flag;
+    return (flags & flag) === flag;
 }
 
 export class DeserializationError extends Error {

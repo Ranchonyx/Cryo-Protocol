@@ -1,6 +1,6 @@
 export type { BinaryDataMessage, TXChunkMessage } from "./web/protocol.js";
 export type { PingMessage, ErrorMessage, UTF8DataMessage, AckMessage, TXStartMessage, TXFinishMessage, BinaryMessage, EndpointInfoMessage, ByeMessage } from "./protocol_base.js";
-export { BinaryMessageType, cryoNewId, CRYO_PROTOCOL_VERSION, CRYO_FEATURE_MASK_TRANSACTION, CRYO_PROTOCOL_FEATURES } from "./protocol_base.js";
+export { BinaryMessageType, cryoNewId, cryoHasFeatureFlag, CRYO_PROTOCOL_VERSION, CRYO_FEATURE_MASK_TRANSACTION, CRYO_PROTOCOL_FEATURES } from "./protocol_base.js";
 export { EndpointInfoFrame } from "./web/Protocol/Basic/EndpointInfoFrame.js";
 export { ByeFrame } from "./web/Protocol/Basic/ByeFrame.js";
 export { Utf8DataFrame } from "./web/Protocol/Basic/Utf8DataFrame.js";
