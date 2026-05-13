@@ -1,0 +1,1 @@
+{"version":3,"file":"ByeFrame.d.ts","sourceRoot":"","sources":["../../../../../src/node/Protocol/Basic/ByeFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAGmC,UAAU,EACnD,MAAM,2BAA2B,CAAC;AAEnC,qBAAa,QAAQ;WACH,WAAW,CAAC,KAAK,EAAE,MAAM,GAAG,UAAU;WAiBtC,SAAS,CAAC,GAAG,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,GAAG,IAAI,GAAG,MAAM;CAenF"}

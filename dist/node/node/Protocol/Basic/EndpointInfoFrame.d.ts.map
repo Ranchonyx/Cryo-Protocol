@@ -1,0 +1,1 @@
+{"version":3,"file":"EndpointInfoFrame.d.ts","sourceRoot":"","sources":["../../../../../src/node/Protocol/Basic/EndpointInfoFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAGH,mBAAmB,EAAC,MAAM,2BAA2B,CAAC;AAG1D,qBAAa,iBAAiB;WACZ,WAAW,CAAC,KAAK,EAAE,MAAM,GAAG,mBAAmB;WAmB/C,SAAS,CAAC,GAAG,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM,GAAG,MAAM;CAW5D"}
