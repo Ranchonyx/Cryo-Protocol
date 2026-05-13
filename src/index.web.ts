@@ -13,6 +13,7 @@ export type {
 export {
     BinaryMessageType,
     cryoNewId,
+    cryoHasFeatureFlag,
     CRYO_PROTOCOL_VERSION,
     CRYO_FEATURE_MASK_TRANSACTION,
     CRYO_PROTOCOL_FEATURES
