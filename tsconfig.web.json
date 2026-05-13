@@ -12,6 +12,6 @@
   "include": [
     "./src/index.web.ts",
     "./src/web/**/*.ts",
-    "./src/agnostic/protocol_agnostic.ts"
+    "./src/protocol_base.ts"
   ]
 }

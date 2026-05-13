@@ -1,9 +1,8 @@
 import {AckMessage, BinaryMessageType, DeserializationError} from "../../../protocol_base.js";
 
-import {CryoBuffer} from "../../CryoBuffer.js";
 
 export class ACKFrame {
-    public static Deserialize(value: CryoBuffer): AckMessage {
+    public static Deserialize(value: Buffer): AckMessage {
         const sid = value.readBigUInt64BE(0);
         const type = value.readUint8(8);
         const ack = value.readUInt32BE(9);
@@ -18,8 +17,8 @@ export class ACKFrame {
         }
     }
 
-    public static Serialize(sid: bigint, ack: number): CryoBuffer {
-        const msg_buf = CryoBuffer.alloc(8 + 4 + 1);
+    public static Serialize(sid: bigint, ack: number): Buffer {
+        const msg_buf = Buffer.alloc(8 + 4 + 1);
 
         msg_buf.writeBigUInt64BE(sid, 0);
         msg_buf.writeUint8(BinaryMessageType.ACK, 8);

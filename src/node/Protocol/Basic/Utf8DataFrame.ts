@@ -2,13 +2,11 @@ import {
     BinaryMessageType,
     CRYO_MAX_PAYLOAD,
     DeserializationError, SerializationError,
-    UTF8DataMessage
-} from "../../../protocol_base.js";
+    UTF8DataMessage} from "../../../protocol_base.js";
 
-import {CryoBuffer} from "../../CryoBuffer.js";
 
 export class Utf8DataFrame {
-    public static Deserialize(value: CryoBuffer): UTF8DataMessage {
+    public static Deserialize(value: Buffer): UTF8DataMessage {
         const sid = value.readBigUInt64BE(0);
         const type = value.readUint8(8);
         const ack = value.readUInt32BE(9);
@@ -25,12 +23,12 @@ export class Utf8DataFrame {
         }
     }
 
-    public static Serialize(sid: bigint, ack: number, payload: string | null): CryoBuffer {
-        const payload_length = payload ? CryoBuffer.from(payload).byteLength : 4;
+    public static Serialize(sid: bigint, ack: number, payload: string | null): Buffer {
+        const payload_length = payload ? Buffer.from(payload).byteLength : 4;
         if (payload_length > CRYO_MAX_PAYLOAD)
             throw new SerializationError(`Payload size of ${CRYO_MAX_PAYLOAD} bytes exceeded!`);
 
-        const msg_buf = CryoBuffer.alloc(8 + 4 + 1 + payload_length);
+        const msg_buf = Buffer.alloc(8 + 4 + 1 + payload_length);
 
         msg_buf.writeBigUInt64BE(sid, 0);
         msg_buf.writeUint8(BinaryMessageType.UTF8DATA, 8);

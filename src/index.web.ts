@@ -1,9 +1,19 @@
 export type {BinaryDataMessage, TXChunkMessage} from "./web/protocol.js"
 export type {
-    PingMessage, ErrorMessage, UTF8DataMessage, AckMessage, TXStartMessage, TXFinishMessage, BinaryMessage
-} from "./agnostic/protocol_agnostic.js"
-export {BinaryMessageType} from "./agnostic/protocol_agnostic.js"
+    PingMessage,
+    ErrorMessage,
+    UTF8DataMessage,
+    AckMessage,
+    TXStartMessage,
+    TXFinishMessage,
+    BinaryMessage,
+    EndpointInfoMessage,
+    ByeMessage
+} from "./protocol_base.js"
+export {BinaryMessageType, cryoNewId} from "./protocol_base.js"
 
+export {EndpointInfoFrame} from "./web/Protocol/Basic/EndpointInfoFrame.js"
+export {ByeFrame} from "./web/Protocol/Basic/ByeFrame.js"
 export {Utf8DataFrame} from "./web/Protocol/Basic/Utf8DataFrame.js"
 export {BinaryDataFrame} from "./web/Protocol/Basic/BinaryDataFrame.js"
 export {ACKFrame} from "./web/Protocol/Basic/ACKFrame.js"

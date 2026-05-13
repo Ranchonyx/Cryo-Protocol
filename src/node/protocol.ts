@@ -1,13 +1,12 @@
 import {BinaryMessage, BinaryMessageType} from "../protocol_base.js";
-import {CryoBuffer} from "./CryoBuffer.js";
 
 export type BinaryDataMessage = BinaryMessage<{
     ack: number;
-    payload: CryoBuffer;
+    payload: Buffer;
 }, BinaryMessageType.BINARYDATA>;
 
 
 export type TXChunkMessage = BinaryMessage<{
     txId: number;
-    payload: CryoBuffer;
+    payload: Buffer;
 }, BinaryMessageType.TX_CHUNK>;

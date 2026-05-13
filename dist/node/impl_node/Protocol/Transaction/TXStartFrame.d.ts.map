@@ -1,1 +1,0 @@
-{"version":3,"file":"TXStartFrame.d.ts","sourceRoot":"","sources":["../../../../../src/impl_node/Protocol/Transaction/TXStartFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAA0C,cAAc,EAAE,IAAI,EAAC,MAAM,wCAAwC,CAAC;AAGrH,qBAAa,YAAY;WACP,WAAW,CAAC,KAAK,EAAE,MAAM,GAAG,cAAc;WAmB1C,SAAS,CAAC,GAAG,EAAE,IAAI,EAAE,GAAG,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM,GAAG,MAAM;CAYtF"}

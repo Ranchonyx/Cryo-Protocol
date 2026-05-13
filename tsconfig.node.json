@@ -12,7 +12,7 @@
   },
   "include": [
     "./src/index.node.ts",
-    "./src/impl_node/**/*.ts",
-    "./src/agnostic/protocol_agnostic.ts"
+    "./src/node/**/*.ts",
+    "./src/protocol_base.ts"
   ]
 }

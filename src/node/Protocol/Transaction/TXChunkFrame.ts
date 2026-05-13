@@ -5,10 +5,9 @@ import {
     CRYO_MAX_PAYLOAD,
     DeserializationError,
     SerializationError} from "../../../protocol_base.js";
-import {CryoBuffer} from "../../CryoBuffer.js";
 
 export class TXChunkFrame {
-    public static Deserialize(value: CryoBuffer): TXChunkMessage {
+    public static Deserialize(value: Buffer): TXChunkMessage {
         const sid = value.readBigUInt64BE(0);
         const type = value.readUint8(8);
         const txId = value.readUInt32BE(9);
@@ -25,11 +24,11 @@ export class TXChunkFrame {
         }
     }
 
-    public static Serialize(sid: bigint, txId: number, payload: CryoBuffer): CryoBuffer {
+    public static Serialize(sid: bigint, txId: number, payload: Buffer): Buffer {
         if (payload.byteLength > CRYO_MAX_PAYLOAD)
             throw new SerializationError(`Payload size of ${CRYO_MAX_PAYLOAD} bytes exceeded!`);
 
-        const msg_buf = CryoBuffer.alloc(8 + 1 + 4 + payload.byteLength);
+        const msg_buf = Buffer.alloc(8 + 1 + 4 + payload.byteLength);
         msg_buf.writeBigUInt64BE(sid, 0);
         msg_buf.writeUint8(BinaryMessageType.TX_CHUNK, 8);
         msg_buf.writeUInt32BE(txId, 9);
